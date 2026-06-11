@@ -160,7 +160,7 @@ export const portfolioData: PortfolioData = {
         "Landing page for the IT-company. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
       techStack: ["Next.js", "TypeScript", "HTML", "CSS", "React swiper"],
       link: "https://utouch.dev/",
-      github: "",
+      github: "https://github.com/TrocyukS96/utouch",
       thumbnail: "/images/projects/utouch.webp",
     },
     // {
