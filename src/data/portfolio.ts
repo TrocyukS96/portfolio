@@ -163,6 +163,25 @@ export const portfolioData: PortfolioData = {
       github: "https://github.com/TrocyukS96/utouch",
       thumbnail: "/images/projects/utouch.webp",
     },
+    {
+      title: "Gaming platform for Warcraft III: The Frozen Throne",
+      description:
+        "Modern platform for playing Warcraft III: The Frozen Throne online, featuring an improved PvPGN server, real-time multiplayer, tournaments, and a focus on developing the classic DotA map.",
+      techStack: ["Next.js", "TypeScript", "HTML", "Tailwind CSS", "ShadCN", "Zustand","Zod"],
+      link: "https://w3league.net/en",
+      github: "",
+      thumbnail: "/images/projects/w3league.webp",
+    },
+    {
+      title: "Fitness landing page",
+      description:
+        "Fitness landing page. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
+      techStack: ["Next.js", "TypeScript", "HTML", "CSS", "React swiper"],
+      link: "https://fitness-landing-pi.vercel.app/",
+      github: "https://github.com/TrocyukS96/fitness-landing",
+      thumbnail: "/images/projects/fitness.webp",
+    },
+    
     // {
     //   title: "Covid-19 Status",
     //   description:
