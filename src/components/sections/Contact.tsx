@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import { portfolioData } from "@/data/portfolio";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { motion } from "framer-motion";
 import {
@@ -107,7 +106,7 @@ export const ContactSection = React.memo(function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500">Based in</p>
-                  <p className="font-medium">Houston, Texas</p>
+                  <p className="font-medium">Belarus, Minsk</p>
                 </div>
               </div>
             </div>
