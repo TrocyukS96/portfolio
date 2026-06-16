@@ -181,6 +181,24 @@ export const portfolioData: PortfolioData = {
       github: "https://github.com/TrocyukS96/fitness-landing",
       thumbnail: "/images/projects/fitness.webp",
     },
+    {
+      title: "Saas landing page",
+      description:
+        "Landing page for a platform that provides a saas solution for businesses. I created this project using Next.js, tailwind css and shadcn/ui for the components.",
+      techStack: ["Next.js", "Tailwind CSS", "ShadCN"],
+      link: "https://saas-landing-roan-seven.vercel.app/",
+      github: "https://github.com/TrocyukS96/saas-landing",
+      thumbnail: "/images/projects/saas.webp",
+    },
+    {
+      title: "LIMS application for an oil company",
+      description:
+        "LIMS application for an oil company. I used React, TypeScript, Tailwind CSS, ShadCN/ui for the components and RTK Query for the data fetching.",
+      techStack: ["React", "TypeScript", "Tailwind CSS", "ShadCN/ui", "RTK Query"],
+      link: "https://in-log-livid.vercel.app",
+      github: "https://github.com/TrocyukS96/inLog",
+      thumbnail: "/images/projects/inLog.webp",
+    }
     
     // {
     //   title: "Covid-19 Status",
