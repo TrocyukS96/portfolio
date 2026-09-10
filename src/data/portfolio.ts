@@ -23,7 +23,7 @@ export interface Project {
   techStack: string[];
   link?: string;
   github?: string;
-  thumbnail: string;
+  images: string[];
 }
 
 export interface PortfolioData {
@@ -91,7 +91,6 @@ export const portfolioData: PortfolioData = {
       "React Hook Form",
       "React Icons",
       "React Toastify",
-      "React Toastify",
     ],
     web: [
       "React",
@@ -155,40 +154,38 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
-      title: "Landing page for the IT-company",
+      title: "Truck Accessories & Modular Cargo Platform",
       description:
-        "Landing page for the IT-company. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
-      techStack: ["Next.js", "TypeScript", "HTML", "CSS", "React swiper"],
-      link: "https://utouch.dev/",
-      github: "https://github.com/TrocyukS96/utouch",
-      thumbnail: "/images/projects/utouch.webp",
+        "Developed and launched a modern digital platform for 147pacific.com. Built with Next.js and Tailwind CSS for optimal performance and responsive UI. Integrated [CMS Name] for dynamic content management and [Payment System] for secure transactions. Managed the full project lifecycle, maintaining clear client communication from initial concept to production deployment.",
+      techStack: ["Next.js", "Payload CMS", "Saleor", "Tailwind CSS", "TypeScript"],
+      link: "https://www.147pacific.com",
+      images: ["/images/projects/147pacific/slide-1.webp","/images/projects/147pacific/slide-2.webp","/images/projects/147pacific/slide-3.webp","/images/projects/147pacific/slide-4.webp","/images/projects/147pacific/slide-5.webp"],
+    },
+    {
+      title: "Hecosvc: Auto Tools Hub",
+      description:
+        "I independently developed and launched hecosvc.com, a comprehensive platform for auto tools and garage equipment. Built with Next.js and styled using Tailwind CSS, the site features a highly responsive and performant frontend. I integrated Payload CMS to provide the client with a flexible, custom content management system for their knowledge base, and implemented Saleor for secure, scalable payment processing. Beyond development, I managed the entire project lifecycle, acting as the primary point of contact and maintaining direct communication with the client from initial requirements gathering all the way to production deployment.",
+      techStack: ["Next.js", "Payload CMS", "Saleor", "Tailwind CSS", "TypeScript"],
+      link: "https://storefront-production-f7ed.up.railway.app/en",
+      images: ["/images/projects/hecosvc/slide-1.webp","/images/projects/hecosvc/slide-2.webp","/images/projects/hecosvc/slide-3.webp","/images/projects/hecosvc/slide-4.webp"],
     },
     {
       title: "Gaming platform for Warcraft III: The Frozen Throne",
       description:
         "Modern platform for playing Warcraft III: The Frozen Throne online, featuring an improved PvPGN server, real-time multiplayer, tournaments, and a focus on developing the classic DotA map.",
-      techStack: ["Next.js", "TypeScript", "HTML", "Tailwind CSS", "ShadCN", "Zustand","Zod"],
+      techStack: ["Next.js", "TypeScript", "HTML", "Tailwind CSS", "ShadCN", "Zustand", "Zod"],
       link: "https://w3league.net/en",
       github: "",
-      thumbnail: "/images/projects/w3league.webp",
+      images: ["/images/projects/w3league/slide-1.webp","/images/projects/w3league/slide-2.webp","/images/projects/w3league/slide-3.webp","/images/projects/w3league/slide-4.webp"],
     },
     {
-      title: "Fitness landing page",
+      title: "MindHaven: Mental Wellness Hub",
       description:
-        "Fitness landing page. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
-      techStack: ["Next.js", "TypeScript", "HTML", "CSS", "React swiper"],
-      link: "https://fitness-landing-pi.vercel.app/",
-      github: "https://github.com/TrocyukS96/fitness-landing",
-      thumbnail: "/images/projects/fitness.webp",
-    },
-    {
-      title: "Saas landing page",
-      description:
-        "Landing page for a platform that provides a saas solution for businesses. I created this project using Next.js, tailwind css and shadcn/ui for the components.",
-      techStack: ["Next.js", "Tailwind CSS", "ShadCN"],
-      link: "https://saas-landing-roan-seven.vercel.app/",
-      github: "https://github.com/TrocyukS96/saas-landing",
-      thumbnail: "/images/projects/saas.webp",
+        "A web application designed to help users offload mental clutter, track daily tasks, and build sustainable habits. Features include journaling, goal-setting (e.g., meditation streaks), event tracking, and a rewards system that gamifies personal growth. Built with Next.js and Tailwind CSS for a fast, responsive experience. I managed the full project lifecycle, from initial concept to production deployment.",
+      techStack: ["Next.js", "TypeScript", "HTML", "Tailwind CSS", "ShadCN", "Zustand", "Zod"],
+      link: "https://w3league.net/en",
+      github: "",
+      images: ["/images/projects/mind-haven/slide-1.webp","/images/projects/mind-haven/slide-2.webp","/images/projects/mind-haven/slide-3.webp","/images/projects/mind-haven/slide-4.webp"],
     },
     {
       title: "LIMS application for an oil company",
@@ -197,63 +194,47 @@ export const portfolioData: PortfolioData = {
       techStack: ["React", "TypeScript", "Tailwind CSS", "ShadCN/ui", "RTK Query"],
       link: "https://in-log-livid.vercel.app",
       github: "https://github.com/TrocyukS96/inLog",
-      thumbnail: "/images/projects/inLog.webp",
-    }
-    
-    // {
-    //   title: "Covid-19 Status",
-    //   description:
-    //     "COVID-19 Status is a free and open-source Android app that provides real-time COVID-19 statistics across India and worldwide, featuring a clean, fast, and responsive user interface.",
-    //   techStack: ["Java", "XML", "Firebase", "Rest APIs"],
-    //   link: "https://project.vipuljha.com/covid",
-    //   github: "https://github.com/Coders-Of-XDA-OT/covid19-status-android",
-    //   thumbnail: "/images/projects/covid.webp",
-    // },
-    // {
-    //   title: "ElectraBlue Kernel",
-    //   description:
-    //     "ElectraBlue is a flash-and-forget custom kernel for supported Android devices, built to deliver a stable, smooth, and battery-efficient experience with thoughtful customization options using apps like Kernel Adiutor.",
-    //   techStack: ["Linux", "C", "Makefile", "Bash"],
-    //   link: "https://xdaforums.com/t/kernel-mido-oreo-pie-electrablue-kernel-21-0-july-06-redmi-note-4.3655651",
-    //   github: "https://github.com/lordarcadius/electrablue_mido",
-    //   thumbnail: "/images/projects/eb.webp",
-    // },
-    // {
-    //   title: "Portfolio Website",
-    //   description:
-    //     "A previous version of my personal portfolio website showcasing my projects, work experience, and resume before launching the further iterations built in more modern tech stack.",
-    //   techStack: ["HTML", "CSS", "Bootstrap", "JQuery"],
-    //   link: "https://project.vipuljha.com/website",
-    //   github: "https://github.com/lordarcadius/website",
-    //   thumbnail: "/images/projects/portfolio.webp",
-    // },
-    // {
-    //   title: "ABS Tweaks",
-    //   description:
-    //     "ABS Tweaks (Arkaynine Boost Script) is a collection of shell-based performance optimizations for Android devices, designed to improve speed and battery life. It has been downloaded over 200,000 times.",
-    //   techStack: ["Shell", "BusyBox", "Terminal Emulator", "SuperSU"],
-    //   link: "https://xdaforums.com/t/tweak-mod-arm-x86-project-dark-booster-abs-tweaks-v5-0-2-3-6-0-23-01-2016.3120404",
-    //   github: "https://github.com/lordarcadius/ABS-Tweaks",
-    //   thumbnail: "/images/projects/abs.webp",
-    // },
-    // {
-    //   title: "Lenovo SNAPit Camera",
-    //   description:
-    //     "Lenovo SNAPit Camera was one of the most feature-rich OEM camera apps of its time, offering a wide range of unique capabilities. I successfully ported it to run on nearly all supported Android devices back then.",
-    //   techStack: ["Java", "XML", "Libs", "Smali", "Apktool"],
-    //   link: "https://xdaforums.com/t/app-port-6-0-lenovo-snapit-camera-5-8-53-for-all-devices.3608065/",
-    //   github: "",
-    //   thumbnail: "/images/projects/snapit.webp",
-    // },
-    // {
-    //   title: "CyanogenOS Apps",
-    //   description:
-    //     "CyanogenOS 12.1 included exclusive apps such as the updated theme engine and a Truecaller-integrated dialer. I successfully ported these features to work on CyanogenMod 13 and CyanogenMod13-based ROMs.",
-    //   techStack: ["Java", "Libs", "Updater Script", "Apktool"],
-    //   link: "https://xdaforums.com/t/c-apps-v2-unofficial-6-0-x-cyanogen-os-capps-v2-for-cm13-and-cm13-based-roms.3254865/",
-    //   github: "",
-    //   thumbnail: "/images/projects/capps.webp",
-    // },
+      images: ["/images/projects/inLog/slide-1.webp"],
+    },
+    {
+      title: "VTB Online: Digital Banking Platform",
+      description:
+        "VTB Online — Digital Banking Platform for Retail Clients. A full-scale internet banking platform serving over 600,000 clients in Belarus. The system enables secure payments via the national ERIP system, instant card-to-card and phone-number transfers, currency conversion, and remote management of cards, deposits, and loans. Built with a focus on reliability and 24/7 availability. I managed the entire project lifecycle, from initial client communication to production launch.",
+      techStack: ["React.js", "TypeScript", "HTML", "React Query", "tailwind"],
+      link: "https://online.vtb.by",
+      github: "",
+      images: ["/images/projects/vtb/slide-1.webp","/images/projects/vtb/slide-2.webp","/images/projects/vtb/slide-3.webp",],
+    },
+    {
+      title: "Landing page for the IT-company",
+      description:
+        "Landing page for the IT-company. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
+      techStack: ["Next.js", "TypeScript", "HTML", "CSS", "React swiper"],
+      link: "https://utouch.dev/",
+      github: "https://github.com/TrocyukS96/utouch",
+      images: ["/images/projects/utouch.webp"],
+    },
+
+    {
+      title: "Fitness landing page",
+      description:
+        "Fitness landing page. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
+      techStack: ["Next.js", "TypeScript", "HTML", "CSS", "React swiper"],
+      link: "https://fitness-landing-pi.vercel.app/",
+      github: "https://github.com/TrocyukS96/fitness-landing",
+      images: ["/images/projects/polovtsev/slide-1.webp","/images/projects/polovtsev/slide-2.webp","/images/projects/polovtsev/slide-3.webp","/images/projects/polovtsev/slide-4.webp"],
+    },
+    {
+      title: "Saas landing page",
+      description:
+        "Landing page for a platform that provides a saas solution for businesses. I created this project using Next.js, tailwind css and shadcn/ui for the components.",
+      techStack: ["Next.js", "Tailwind CSS", "ShadCN"],
+      link: "https://saas-landing-roan-seven.vercel.app/",
+      github: "https://github.com/TrocyukS96/saas-landing",
+      images: ["/images/projects/saas.webp"],
+    },
+
+
   ],
   url: "https://www.stanislovtrotcuk.com",
 };
