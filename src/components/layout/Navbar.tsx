@@ -5,7 +5,6 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { TbMenu2, TbX } from "react-icons/tb";
-import { portfolioData } from "@/data/portfolio";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -123,16 +122,6 @@ export function Navbar() {
               </Link>
             );
           })}
-          {portfolioData.blogUrl && (
-            <a
-              href={portfolioData.blogUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-slate-300 hover:text-primary transition-colors relative"
-            >
-              Blog
-            </a>
-          )}
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -171,17 +160,6 @@ export function Navbar() {
                 </Link>
               );
             })}
-            {portfolioData.blogUrl && (
-              <a
-                href={portfolioData.blogUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg font-medium text-slate-300 hover:text-primary transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Blog
-              </a>
-            )}
           </nav>
         </motion.div>
       )}

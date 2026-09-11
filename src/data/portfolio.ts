@@ -194,7 +194,7 @@ export const portfolioData: PortfolioData = {
       techStack: ["React", "TypeScript", "Tailwind CSS", "ShadCN/ui", "RTK Query"],
       link: "https://in-log-livid.vercel.app",
       github: "https://github.com/TrocyukS96/inLog",
-      images: ["/images/projects/inLog/slide-1.webp"],
+      images: ["/images/projects/inlog/slide-1.webp","/images/projects/inlog/slide-2.webp","/images/projects/inlog/slide-3.webp"],
     },
     {
       title: "VTB Online: Digital Banking Platform",
