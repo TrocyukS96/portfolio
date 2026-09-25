@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { motion } from "framer-motion";
 import {
@@ -20,6 +20,17 @@ export const ContactSection = React.memo(function ContactSection() {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    try {
+      const brief = sessionStorage.getItem("estimate-brief");
+      if (!brief) return;
+      setFormData((current) => ({ ...current, message: brief }));
+      sessionStorage.removeItem("estimate-brief");
+    } catch {
+      /* Storage can be unavailable; the form stays empty. */
+    }
+  }, []);
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {

@@ -94,3 +94,34 @@ body {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes estimate-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes estimate-sheen {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(280%);
+  }
+}
+
+.estimate-cta {
+  background-image: linear-gradient(
+    110deg,
+    #2dd4bf 0%,
+    #38bdf8 35%,
+    #5eead4 50%,
+    #0ea5e9 65%,
+    #2dd4bf 100%
+  );
+  background-size: 220% 100%;
+  animation: estimate-flow 3.2s ease-in-out infinite;
+}

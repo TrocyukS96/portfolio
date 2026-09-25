@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { TbMenu2, TbX } from "react-icons/tb";
+import { TbMenu2, TbSparkles, TbX } from "react-icons/tb";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -13,7 +14,29 @@ const navLinks = [
   { name: "Contact", href: "#contact" },
 ];
 
+function EstimateLink({ onNavigate }: { onNavigate?: () => void }) {
+  return (
+    <span className="relative inline-flex">
+      <span
+        aria-hidden
+        className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-secondary opacity-50 blur-md animate-pulse"
+      />
+      <Link
+        href="/estimate"
+        onClick={onNavigate}
+        className="estimate-cta group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-4 py-2 text-sm font-bold text-slate-950 shadow-[0_0_24px_rgba(45,212,191,0.35)] transition-transform hover:scale-[1.04]"
+      >
+        <span className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:animate-[estimate-sheen_0.8s_ease] group-hover:opacity-100" />
+        <TbSparkles size={16} className="relative shrink-0" />
+        <span className="relative">Estimate</span>
+      </Link>
+    </span>
+  );
+}
+
 export function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -30,6 +53,8 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (!isHome) return;
+
     const observerOptions = {
       root: null,
       rootMargin: "-50% 0px -50% 0px",
@@ -58,18 +83,22 @@ export function Navbar() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
+    if (!isHome) {
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      // Prevent hash from appearing in URL
       window.history.replaceState(null, "", window.location.pathname);
     }
     if (isMobileMenuOpen) {
@@ -88,21 +117,21 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link
-          href="#about"
-          onClick={(e) => handleNavClick(e, "#about")}
-          className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+          href={isHome ? "#about" : "/"}
+          onClick={isHome ? (e) => handleNavClick(e, "#about") : undefined}
+          className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent lg:text-2xl"
         >
           Stanislav<span className="text-white"> Trotcyuk</span>.
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
               <Link
                 key={link.name}
-                href={link.href}
+                href={isHome ? link.href : `/${link.href}`}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
                   "text-sm font-medium transition-colors relative",
@@ -122,6 +151,7 @@ export function Navbar() {
               </Link>
             );
           })}
+          <EstimateLink />
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -147,7 +177,7 @@ export function Navbar() {
               return (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  href={isHome ? link.href : `/${link.href}`}
                   className={cn(
                     "text-lg font-medium transition-colors",
                     isActive
@@ -160,6 +190,7 @@ export function Navbar() {
                 </Link>
               );
             })}
+            <EstimateLink onNavigate={() => setIsMobileMenuOpen(false)} />
           </nav>
         </motion.div>
       )}
