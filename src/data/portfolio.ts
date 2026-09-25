@@ -206,6 +206,15 @@ export const portfolioData: PortfolioData = {
       images: ["/images/projects/vtb/slide-1.webp","/images/projects/vtb/slide-2.webp","/images/projects/vtb/slide-3.webp",],
     },
     {
+      title: "Landing page for a therapy and wellness practice",
+      description:
+        "Landing page for ThriveTalk, a therapy and whole-life care practice. I used Next.js, TypeScript, React, and CSS for this project.",
+      techStack: ["Next.js", "TypeScript", "React", "HTML", "CSS"],
+      link: "https://thrive-talks-project.vercel.app/",
+      github: "https://github.com/TrocyukS96/ThriveTalks-project",
+      images: ["/images/projects/thrive/slide-1.webp","/images/projects/thrive/slide-2.webp","/images/projects/thrive/slide-3.webp","/images/projects/thrive/slide-4.webp"],
+    },
+    {
       title: "Landing page for the IT-company",
       description:
         "Landing page for the IT-company. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
