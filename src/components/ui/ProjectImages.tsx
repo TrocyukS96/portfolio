@@ -9,6 +9,7 @@ import {
   ImageSliderSlide,
   ImageSliderTrack,
 } from "@/components/ui/ImageSliderTrack";
+import { cn } from "@/lib/utils";
 
 const IMAGE_SIZES =
   "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
@@ -16,9 +17,16 @@ const IMAGE_SIZES =
 interface ProjectImagesProps {
   images: string[];
   title: string;
+  sizes?: string;
+  className?: string;
 }
 
-export function ProjectImages({ images, title }: ProjectImagesProps) {
+export function ProjectImages({
+  images,
+  title,
+  sizes = IMAGE_SIZES,
+  className,
+}: ProjectImagesProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const hasSlider = images.length > 1;
@@ -42,7 +50,10 @@ export function ProjectImages({ images, title }: ProjectImagesProps) {
   return (
     <>
       <div
-        className="relative aspect-video w-full overflow-hidden flex-shrink-0 group/slider"
+        className={cn(
+          "group/slider relative aspect-video w-full flex-shrink-0 overflow-hidden",
+          className,
+        )}
         {...hoverHandlers}
       >
         <div
@@ -65,14 +76,19 @@ export function ProjectImages({ images, title }: ProjectImagesProps) {
                   src={src}
                   alt={`${title} — screenshot ${i + 1}`}
                   fill
-                  sizes={IMAGE_SIZES}
-                  className="object-cover"
+                  sizes={sizes}
+                  className="object-cover transition-transform duration-700 group-hover/slider:scale-105"
                   loading={i === 0 ? "lazy" : undefined}
                 />
               </ImageSliderSlide>
             ))}
           </ImageSliderTrack>
         </div>
+
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-16 bg-gradient-to-t from-slate-950/70 to-transparent"
+        />
 
         {hasSlider && (
           <>

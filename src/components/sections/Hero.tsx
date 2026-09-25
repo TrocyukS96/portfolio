@@ -8,6 +8,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { SocialIcons } from "@/components/ui/SocialIcons";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 14 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, delay: 0.08 + i * 0.1, ease: "easeOut" as const },
+  }),
+};
+
 export const HeroSection = React.memo(function HeroSection() {
   const handleScrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -30,50 +39,95 @@ export const HeroSection = React.memo(function HeroSection() {
       <div className="container mx-auto px-4 xl:px-24 z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex-1 text-center lg:text-left"
-          >
-            <p className="text-primary font-medium mb-4 tracking-wide">
+          <div className="flex-1 text-center lg:text-left">
+            <motion.div
+              custom={0}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mb-5 flex justify-center lg:justify-start"
+            >
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                </span>
+                Available for freelance
+              </span>
+            </motion.div>
+
+            <motion.p
+              custom={1}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mb-3 text-sm font-medium tracking-wide text-slate-400"
+            >
               Hi, I am
-            </p>
-            <h1 className="text-5xl md:text-7xl font-bold text-slate-100 mb-6">
+            </motion.p>
+
+            <motion.h1
+              custom={2}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mb-4 text-5xl font-bold text-slate-100 md:text-7xl"
+            >
               {portfolioData.name}
-            </h1>
-            <h2 className="text-2xl md:text-4xl text-slate-400 mb-6 bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent font-semibold">
+            </motion.h1>
+
+            <motion.h2
+              custom={3}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mb-6 bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-2xl font-semibold text-transparent md:text-4xl"
+            >
               {portfolioData.role}
-            </h2>
+            </motion.h2>
 
-            <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify lg:text-left">
+            <motion.p
+              custom={4}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-slate-400 lg:mx-0"
+            >
               {portfolioData.about}
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col items-center lg:items-start gap-8">
-              {/* Social Media Icons */}
+            <motion.div
+              custom={5}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-col items-center gap-8 lg:items-start"
+            >
               <SocialIcons variant="default" />
 
-              {/* Buttons */}
-              <div className="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-4">
+              <div className="flex flex-row flex-wrap items-center justify-center gap-4 lg:justify-start">
                 <Link
                   href="#projects"
                   onClick={handleScrollToProjects}
-                  className="w-42 px-8 py-3 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary/10 transition-all flex items-center justify-center gap-2"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-8 py-3 font-bold text-slate-950 shadow-lg shadow-primary/20 transition-all hover:shadow-xl hover:shadow-primary/30"
                 >
-                  Projects <TbArrowRight size={20} />
+                  Projects
+                  <TbArrowRight
+                    size={20}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
                 </Link>
 
                 <Link
                   href="/files/resume.pdf"
                   target="_blank"
-                  className="w-42 px-8 py-3 border-2 border-slate-700 text-slate-300 font-bold rounded-full hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-700 px-8 py-3 font-bold text-slate-300 transition-all hover:border-slate-500 hover:bg-slate-800/80 hover:text-white"
                 >
                   Resume <TbDownload size={20} />
                 </Link>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           {/* Right Image */}
           <motion.div
@@ -92,7 +146,6 @@ export const HeroSection = React.memo(function HeroSection() {
               {/* Main Image Container with Gradient Border */}
               <div className="relative w-full h-full rounded-[2rem] p-[2px] bg-gradient-to-br from-primary to-secondary -rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-2xl">
                 <div className="w-full h-full rounded-[calc(2rem-2px)] overflow-hidden bg-slate-900 relative">
-                  {/* Use a placeholder if image fails or is missing */}
                   <div className="w-full h-full flex items-center justify-center text-slate-500 bg-slate-800 relative">
                     <Image
                       src={portfolioData.profileImage}

@@ -24,6 +24,7 @@ export interface Project {
   link?: string;
   github?: string;
   images: string[];
+  highlights?: string[];
 }
 
 export interface PortfolioData {
@@ -49,7 +50,7 @@ export const portfolioData: PortfolioData = {
   name: "Stanislav Trotcyuk",
   role: "Full-Stack Developer",
   about:
-    "I’m a Web Developer with 4+ years of experience creating high-quality web applications. My expertise spans React, Next.js, Tailwind CSS, and modern web architecture, with additional experience in Node.js and Express for backend development. I’ve also worked extensively with databases and APIs, giving me a strong foundation across both software and system-level development.",
+    "I take web products from idea to production — storefronts, dashboards, APIs, and the servers they run on. Four-plus years with React, Next.js, and Nest, focused on architecture that actually ships.",
   profileImage: "/images/profile.webp",
   blogUrl: "https://medium.com/@trotzuk.stanislav",
   social: [
@@ -156,15 +157,20 @@ export const portfolioData: PortfolioData = {
     {
       title: "Truck Accessories & Modular Cargo Platform",
       description:
-        "Developed and launched a modern digital platform for 147pacific.com. Built with Next.js and Tailwind CSS for optimal performance and responsive UI. Integrated [CMS Name] for dynamic content management and [Payment System] for secure transactions. Managed the full project lifecycle, maintaining clear client communication from initial concept to production deployment.",
+        "Launched 147pacific.com — a storefront for truck accessories and modular cargo. Next.js and Tailwind for the storefront, Payload CMS for content, Saleor for catalog and checkout. I owned the project from concept to production.",
       techStack: ["Next.js", "Payload CMS", "Saleor", "Tailwind CSS", "TypeScript"],
       link: "https://www.147pacific.com",
       images: ["/images/projects/147pacific/slide-1.webp","/images/projects/147pacific/slide-2.webp","/images/projects/147pacific/slide-3.webp","/images/projects/147pacific/slide-4.webp","/images/projects/147pacific/slide-5.webp"],
+      highlights: [
+        "Production storefront with Saleor checkout",
+        "Payload CMS for the client's content team",
+        "Full lifecycle: architecture, build, and launch",
+      ],
     },
     {
       title: "Hecosvc: Auto Tools Hub",
       description:
-        "I independently developed and launched hecosvc.com, a comprehensive platform for auto tools and garage equipment. Built with Next.js and styled using Tailwind CSS, the site features a highly responsive and performant frontend. I integrated Payload CMS to provide the client with a flexible, custom content management system for their knowledge base, and implemented Saleor for secure, scalable payment processing. Beyond development, I managed the entire project lifecycle, acting as the primary point of contact and maintaining direct communication with the client from initial requirements gathering all the way to production deployment.",
+        "Independently built and launched hecosvc.com — a storefront and knowledge base for auto tools and garage equipment. Next.js and Tailwind on the frontend, Payload CMS for content, Saleor for payments. I was the client's single point of contact from requirements to production.",
       techStack: ["Next.js", "Payload CMS", "Saleor", "Tailwind CSS", "TypeScript"],
       link: "https://storefront-production-f7ed.up.railway.app/en",
       images: ["/images/projects/hecosvc/slide-1.webp","/images/projects/hecosvc/slide-2.webp","/images/projects/hecosvc/slide-3.webp","/images/projects/hecosvc/slide-4.webp"],
@@ -217,17 +223,17 @@ export const portfolioData: PortfolioData = {
     {
       title: "Landing page for the IT-company",
       description:
-        "Landing page for the IT-company. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
+        "Marketing site for an IT company. Next.js, TypeScript, and a Swiper-based gallery.",
       techStack: ["Next.js", "TypeScript", "HTML", "CSS", "React swiper"],
       link: "https://utouch.dev/",
       github: "https://github.com/TrocyukS96/utouch",
-      images: ["/images/projects/utouch.webp"],
+      images: ["/images/projects/utouch/slide-1.webp","/images/projects/utouch/slide-2.webp","/images/projects/utouch/slide-3.webp","/images/projects/utouch/slide-4.webp"],
     },
 
     {
       title: "Fitness landing page",
       description:
-        "Fitness landing page. I used Next.js, TypeScript, HTML, CSS, and React swiper for this project.",
+        "Landing page for a fitness coach. Next.js with a Swiper gallery and a conversion-focused layout.",
       techStack: ["Next.js", "TypeScript", "HTML", "CSS", "React swiper"],
       link: "https://fitness-landing-pi.vercel.app/",
       github: "https://github.com/TrocyukS96/fitness-landing",
@@ -236,7 +242,7 @@ export const portfolioData: PortfolioData = {
     {
       title: "Saas landing page",
       description:
-        "Landing page for a platform that provides a saas solution for businesses. I created this project using Next.js, tailwind css and shadcn/ui for the components.",
+        "SaaS marketing page built with Next.js, Tailwind CSS, and ShadCN.",
       techStack: ["Next.js", "Tailwind CSS", "ShadCN"],
       link: "https://saas-landing-roan-seven.vercel.app/",
       github: "https://github.com/TrocyukS96/saas-landing",

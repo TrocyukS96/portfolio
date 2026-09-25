@@ -35,7 +35,7 @@ export const ProjectCard = React.memo(function ProjectCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index < 3 ? index * 0.08 : 0 }}
       className={cn(
         "group relative h-full",
         CARD_HEIGHT,
@@ -137,6 +137,20 @@ export const ProjectCard = React.memo(function ProjectCard({
                 <p className="mb-5 text-sm leading-relaxed text-slate-400">
                   {project.description}
                 </p>
+
+                {project.highlights && project.highlights.length > 0 && (
+                  <ul className="mb-5 space-y-2">
+                    {project.highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="flex gap-2.5 text-sm text-slate-300"
+                      >
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <div className="flex flex-wrap gap-2 pb-1">
                   {project.techStack.map((tech, i) => (
